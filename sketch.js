@@ -1,10 +1,10 @@
 // Hyperparameters
 let currentRotation = { x: 0.0, y: 0.0, z: 0.0 }; // current rotation value, start at 0
-let acceleration = 0.00000005; // max velocity change per tick
-let maxVelocity = 0.0000005; // max/min velocity
-let torusCount = 30; // number of concentric toruses to draw
-let radiusDiff = 35, torusThickness = 15; // radius difference and torus thickness
-let detailX = 24, detailY = 16; // polygon detail
+let acceleration = 0.0000005; // max velocity change per tick
+let maxVelocity = 0.000005; // max/min velocity
+let torusCount = 32; // number of concentric toruses to draw
+let radiusDiff = 50, torusThickness = 20; // radius difference and torus thickness
+let detailX = 32, detailY = 8; // polygon detail
 let velocity = { // current velocity
   x: (Math.random() * maxVelocity * 2) - maxVelocity,
   y: (Math.random() * maxVelocity * 2) - maxVelocity,
@@ -202,11 +202,9 @@ function draw() {
   pointLight(pointColor.r, pointColor.g, pointColor.b, mouseX, mouseY, cameraZ / 4.0);
   specularMaterial(200, 200, 200);
   background(0);
-  //console.log(color, pointColor, velocity);
 
   // Draw objects and update rotations
   updateRotation();
-  sphere(radiusDiff);
   for (let i = 1; i <= torusCount; i++) {
     updateRotation();
     torus(radiusDiff + (i * radiusDiff), torusThickness, detailX, detailY);
