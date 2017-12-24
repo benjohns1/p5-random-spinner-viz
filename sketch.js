@@ -2,7 +2,7 @@
 let currentRotation = { x: 0.0, y: 0.0, z: 0.0 }; // current rotation value, start at 0
 let acceleration = 0.00000005; // max velocity change per tick
 let maxVelocity = 0.0000005; // max/min velocity
-let torusCount = 100; // number of concentric toruses to draw
+let torusCount = 60; // number of concentric toruses to draw
 let radiusDiff = 35, torusThickness = 15; // radius difference and torus thickness
 let detailX = 24, detailY = 16; // polygon detail
 let velocity = { // current velocity
